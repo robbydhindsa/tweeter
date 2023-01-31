@@ -1,0 +1,36 @@
+
+.tweet-input {
+  display: flex;
+  flex-direction: column;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  outline: none;
+  background-color: #f4f1ec;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid;
+  width: 100%;
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: "Bungee";
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+}
+
+.counter {
+  font-family: "Bungee";
+}
