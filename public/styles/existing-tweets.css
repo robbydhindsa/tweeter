@@ -1,0 +1,53 @@
+article {
+  padding: 20px;
+}
+
+article:hover {
+  box-shadow: 5px 5px 5px gold;
+}
+
+.old-tweets {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  border: solid 3px;
+}
+
+
+.tweeter-user {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actual-tweet {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.timestamp-engagement {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: solid 3px;
+  padding-top: 10px;
+
+  font-size: small;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+i {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #4056A1;
+}
+
+i:hover {
+  color: gold;
+}
+
