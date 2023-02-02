@@ -86,22 +86,21 @@ $(document).ready(function () {
   const $form = $(`.load-tweets`);
   $form.on("submit", function (event) {
     event.preventDefault();
-    const serializedData = $(`#tweet-text`).serialize();
-    console.log($(`#tweet-text`).serialize());
+    const serializedData = $(this).serialize();
+    console.log($(this).serialize());
+
+    let tweetLength = $("#tweet-text").val().length;
+
+    if (tweetLength === 0) {
+      return alert("Cannot post an empty tweet.");
+    }
+
+    if (tweetLength > 140) {
+      return alert("Tweet cannot exceed 140 characters.");
+    }
 
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
-
-      let tweetLength = serializedData.slice(5).length;
-      console.log("tweetLength:", tweetLength);
-
-      if (tweetLength === 0) {
-        return alert("Cannot post an empty tweet.");
-      }
-
-      if (tweetLength > 140) {
-        return alert("Tweet cannot exceed 140 characters.");
-      }
       
     })
   })
