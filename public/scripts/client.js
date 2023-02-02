@@ -90,5 +90,19 @@ $(document).ready(function () {
     })
   })
 
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets/",
+      type: "GET",
+      dataType: "json",
+      success: function(res) {
+        console.log(res);
+        renderTweets(res);
+      } 
+    })
+  }
+
+  loadTweets();
+
 });
 
