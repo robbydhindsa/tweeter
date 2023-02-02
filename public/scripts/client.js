@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
 $(document).ready(function () {
 
   const data = [
@@ -44,6 +46,8 @@ $(document).ready(function () {
   // }
 
   const createTweetElement = function(tweet) {
+    const ago = timeago.format(tweet.created_at);
+
     let $tweet = $(`
       <article>
       <div class="tweeter-user">
@@ -62,7 +66,7 @@ $(document).ready(function () {
       
       <div class="timestamp-engagement">
         <div>
-          <span>${tweet.created_at}</span>
+          <span>${ago}</span>
         </div>
         <div>
           <span>
@@ -87,6 +91,18 @@ $(document).ready(function () {
 
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
+
+      let tweetLength = serializedData.slice(5).length;
+      console.log("tweetLength:", tweetLength);
+
+      if (tweetLength === 0) {
+        return alert("Cannot post an empty tweet.");
+      }
+
+      if (tweetLength > 140) {
+        return alert("Tweet cannot exceed 140 characters.");
+      }
+      
     })
   })
 
