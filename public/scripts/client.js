@@ -98,15 +98,19 @@ $(document).ready(function () {
     let tweetLength = $("#tweet-text").val().length;
 
     if (tweetLength === 0) {
-      return alert("Cannot post an empty tweet.");
+      return $('.error-container-empty').removeClass('hidden-empty');
     }
 
     if (tweetLength > 140) {
-      return alert("Tweet cannot exceed 140 characters.");
+      return $('.error-container-lengthy').removeClass('hidden-lengthy');
     }
 
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
+    })
+    .then(function(tweet) {
+      $('.error-container-empty').addClass('hidden-empty');
+      $('.error-container-lengthy').addClass('hidden-lengthy');
     })
     .then(function(tweet) {
       loadTweets();
@@ -130,3 +134,13 @@ $(document).ready(function () {
 
 });
 
+// if (tweet is empty) {
+//    append the error message to error-container class
+// }
+
+// in post function: hide the element;
+
+// ----
+// 2 separate divs - 1 for each error message 
+// display hide to start 
+// 

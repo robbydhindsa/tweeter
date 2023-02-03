@@ -57,7 +57,13 @@
     <main class="container">
 
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="error-container-empty hidden-empty">
+          <p>Cannot post an empty tweet</p>
+        </div>
+        <div class="error-container-lengthy hidden-lengthy">
+          <p>Tweet cannot exceed 140 characters</p>
+        </div>
+
         <form action="/tweets/" method="POST" class="load-tweets">
           <div class="tweet-input">
             <div>

@@ -1,3 +1,27 @@
+.error-container-empty {
+  border: solid red 7px;
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.error-container-lengthy {
+  border: solid red 7px;
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hidden-empty {
+  display: none;
+}
+
+.hidden-lengthy {
+  display: none;
+}
+
 
 .tweet-input {
   display: flex;
