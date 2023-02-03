@@ -98,19 +98,19 @@ $(document).ready(function () {
     let tweetLength = $("#tweet-text").val().length;
 
     if (tweetLength === 0) {
-      return $('.error-container-empty').removeClass('hidden-empty');
+      return $('.error-container-empty').slideDown();
     }
 
     if (tweetLength > 140) {
-      return $('.error-container-lengthy').removeClass('hidden-lengthy');
+      return $('.error-container-lengthy').slideDown();
     }
 
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
     })
     .then(function(tweet) {
-      $('.error-container-empty').addClass('hidden-empty');
-      $('.error-container-lengthy').addClass('hidden-lengthy');
+      $('.error-container-empty').slideUp();
+      $('.error-container-lengthy').slideUp();
     })
     .then(function(tweet) {
       loadTweets();
