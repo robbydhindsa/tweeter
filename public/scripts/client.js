@@ -101,7 +101,9 @@ $(document).ready(function () {
 
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
-      
+    })
+    .then(function(tweet) {
+      loadTweets();
     })
   })
 
@@ -111,7 +113,7 @@ $(document).ready(function () {
       type: "GET",
       dataType: "json",
       success: function(res) {
-        console.log(res);
+        console.log("loadTweets:", res);
         renderTweets(res);
       } 
     })
