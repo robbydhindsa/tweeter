@@ -4,6 +4,7 @@
   margin-top: 10px;
   text-align: center;
   font-weight: bold;
+  display: none;
 }
 
 .error-container-lengthy {
@@ -12,16 +13,8 @@
   margin-top: 10px;
   text-align: center;
   font-weight: bold;
-}
-
-.hidden-empty {
   display: none;
 }
-
-.hidden-lengthy {
-  display: none;
-}
-
 
 .tweet-input {
   display: flex;
