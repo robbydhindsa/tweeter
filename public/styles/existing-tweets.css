@@ -21,6 +21,10 @@ article:hover {
   justify-content: space-between;
 }
 
+.tweeter-avatar {
+  width: 2em;
+}
+
 .actual-tweet {
   width: 95%;
   margin-left: auto;

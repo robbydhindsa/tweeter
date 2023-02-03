@@ -52,7 +52,7 @@ $(document).ready(function () {
       <article>
       <div class="tweeter-user">
         <div>
-          <span>${tweet.user.avatars}</span>
+          <img src="${tweet.user.avatars}" alt="${tweet.user.name} avatar" class="tweeter-avatar">
           <span>${tweet.user.name}</span>
         </div>
         <div>
