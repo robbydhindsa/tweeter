@@ -120,6 +120,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function(res) {
         console.log("loadTweets:", res);
+        $('.tweet-container').empty();
         renderTweets(res);
       } 
     })
