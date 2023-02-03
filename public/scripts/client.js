@@ -35,7 +35,7 @@ $(document).ready(function () {
 
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
-      $('.tweet-container').append(createTweetElement(tweet));
+      $('.tweet-container').prepend(createTweetElement(tweet));
     });
   }
   // render function using map
@@ -44,6 +44,12 @@ $(document).ready(function () {
   //     $('.tweet-container').append(createTweetElement(tweet));
   //   });
   // }
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function(tweet) {
     const ago = timeago.format(tweet.created_at);
@@ -61,7 +67,7 @@ $(document).ready(function () {
       </div>
       
       <div class="actual-tweet">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       
       <div class="timestamp-engagement">
