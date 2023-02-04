@@ -115,6 +115,9 @@ $(document).ready(function () {
     .then(function(tweet) {
       loadTweets();
     })
+    .then(function(tweet) {
+      $('textarea').val('');
+    })
   })
 
   const loadTweets = function() {
