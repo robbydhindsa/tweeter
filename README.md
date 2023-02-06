@@ -4,9 +4,9 @@ A simple single-page Twitter clone to practice HTML, CSS, JS, jQuery and AJAX fr
 
 ## Final Product
 
-!["Screenshot of Tweeter Home Page"]()
+!["Screenshot of Tweeter Home Page"](https://github.com/robbydhindsa/tweeter/blob/master/docs/tweeter-home-page.png?raw=true)
 
-!["Screenshot of error message"]()
+!["Screenshot of error message"](https://github.com/robbydhindsa/tweeter/blob/master/docs/tweeter-error-message.png?raw=true)
 
 ## Dependencies
 
