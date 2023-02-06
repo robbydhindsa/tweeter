@@ -4,9 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
-$(document).ready(function () {
+$(document).ready(function() {
 
   // Data array: array of objects showing user and tweet data
   const data = [];
@@ -16,9 +14,9 @@ $(document).ready(function () {
     tweets.forEach(tweet => {
       $('.tweet-container').prepend(createTweetElement(tweet));
     });
-  }
+  };
 
-  /***  Another method of coding the renderTweets function (FOR MY OWN LEARNING) ***/ 
+  /***  Another method of coding the renderTweets function (FOR MY OWN LEARNING) ***/
   /*
   renderTweets function using map:
 
@@ -30,7 +28,7 @@ $(document).ready(function () {
   */
 
   // escape function to prevent cross site scripting
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -72,7 +70,7 @@ $(document).ready(function () {
         </div>
       </div>
       </article>
-    `)
+    `);
     return $tweet;
   };
 
@@ -81,7 +79,7 @@ $(document).ready(function () {
 
   const $form = $(`.load-tweets`);
   // Event listener for the "submit" event
-  $form.on("submit", function (event) {
+  $form.on("submit", function(event) {
     event.preventDefault();
     // Serialize form data to JSON string before sending to server
     const serializedData = $(this).serialize();
@@ -103,20 +101,20 @@ $(document).ready(function () {
     $.post("/tweets/", serializedData, function(data, status) {
       console.log(data, status);
     })
-    .then(function(tweet) {
-      // Displays necessary error message(s) if necessary
-      $('.error-container-empty').slideUp();
-      $('.error-container-lengthy').slideUp();
-    })
-    .then(function(tweet) {
-      // Reloads tweets after a new tweet is posted
-      loadTweets();
-    })
-    .then(function(tweet) {
-      // Clears textarea after tweet is posted
-      $('textarea').val('');
-    })
-  })
+      .then(function(tweet) {
+        // Displays necessary error message(s) if necessary
+        $('.error-container-empty').slideUp();
+        $('.error-container-lengthy').slideUp();
+      })
+      .then(function(tweet) {
+        // Reloads tweets after a new tweet is posted
+        loadTweets();
+      })
+      .then(function(tweet) {
+        // Clears textarea after tweet is posted
+        $('textarea').val('');
+      });
+  });
 
   // AJAX GET request to get data and prepend tweet to tweet-container section
   const loadTweets = function() {
@@ -128,9 +126,9 @@ $(document).ready(function () {
         console.log("loadTweets:", res);
         $('.tweet-container').empty();
         renderTweets(res);
-      } 
-    })
-  }
+      }
+    });
+  };
 
   // Load existing tweets upon page load
   loadTweets();
