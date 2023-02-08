@@ -13,17 +13,6 @@ $(document).ready(function() {
     });
   };
 
-  /***  Another method of coding the renderTweets function (FOR MY OWN LEARNING) ***/
-  /*
-  renderTweets function using map:
-
-  const renderTweets = function(tweets) {
-    const result = tweets.map(tweet => {
-      $('.tweet-container').append(createTweetElement(tweet));
-    });
-  }
-  */
-
   // escape function to prevent cross site scripting
   const escape = function(str) {
     let div = document.createElement("div");
@@ -77,7 +66,6 @@ $(document).ready(function() {
     event.preventDefault();
     // Serialize form data to JSON string before sending to server
     const serializedData = $(this).serialize();
-    console.log($(this).serialize());
 
     let tweetLength = $("#tweet-text").val().length;
 
@@ -92,9 +80,7 @@ $(document).ready(function() {
     }
 
     // AJAX POST request that sends form data to the server
-    $.post("/tweets/", serializedData, function(data, status) {
-      console.log(data, status);
-    })
+    $.post("/tweets/", serializedData, function(data, status) {})
       .then(function(tweet) {
         // Displays necessary error message(s) if necessary
         $('.error-container-empty').slideUp();
@@ -119,7 +105,6 @@ $(document).ready(function() {
       type: "GET",
       dataType: "json",
       success: function(res) {
-        console.log("loadTweets:", res);
         $('.tweet-container').empty();
         renderTweets(res);
       }
