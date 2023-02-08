@@ -27,7 +27,7 @@ $(document).ready(function() {
     const ago = timeago.format(tweet.created_at);
 
     // HTML script for each tweet
-    let $tweet = $(`
+    const $tweet = $(`
       <article>
       <div class="tweeter-user">
         <div>
@@ -67,7 +67,7 @@ $(document).ready(function() {
     // Serialize form data to JSON string before sending to server
     const serializedData = $(this).serialize();
 
-    let tweetLength = $("#tweet-text").val().length;
+    const tweetLength = $("#tweet-text").val().length;
 
     // Display error if user tries to post empty tweet
     if (tweetLength === 0) {
