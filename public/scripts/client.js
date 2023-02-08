@@ -6,9 +6,6 @@
 
 $(document).ready(function() {
 
-  // Data array: array of objects showing user and tweet data
-  const data = [];
-
   // Prepends each tweet to the tweet-container section
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
@@ -73,9 +70,6 @@ $(document).ready(function() {
     `);
     return $tweet;
   };
-
-  // Call to function to prepend existing tweets to tweet-container section
-  renderTweets(data);
 
   const $form = $(`.load-tweets`);
   // Event listener for the "submit" event
