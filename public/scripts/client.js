@@ -113,6 +113,8 @@ $(document).ready(function() {
       .then(function(tweet) {
         // Clears textarea after tweet is posted
         $('textarea').val('');
+        // Reset character counter
+        $('.counter').text(140);
       });
   });
 
